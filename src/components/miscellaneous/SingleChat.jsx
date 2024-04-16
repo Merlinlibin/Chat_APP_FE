@@ -15,7 +15,7 @@ import io from "socket.io-client";
 import UpdateGroupChatModel from "./UpdateGroupChatModel";
 import { ChatState } from "../../context/ChatProvider";
 
-const ENDPOINT = "https://chat-app-v9jf.onrender.com"
+const ENDPOINT = "https://chat-app-v9jf.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
