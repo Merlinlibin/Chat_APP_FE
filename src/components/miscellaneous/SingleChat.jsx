@@ -176,7 +176,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         
       }
     });
-  });
+  },[messages]);
 
   const typingHandler = (e) => {
     setNewMessage(e.target.value);
