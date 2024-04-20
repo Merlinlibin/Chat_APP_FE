@@ -26,7 +26,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
   const toast = useToast();
-
+//console.log(messages)
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -153,7 +153,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { 
     fetchMessages();
 
     selectedChatCompare = selectedChat;
@@ -161,7 +161,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   }, [selectedChat]);
 
   useEffect(() => {
-    socket.on("message recieved", (newMessageRecieved) => {
+   
+    socket.on("message recieved", (newMessageRecieved) => { 
       if (
         !selectedChatCompare || // if chat is not selected or doesn't match current chat
         selectedChatCompare._id !== newMessageRecieved.chat._id
@@ -172,6 +173,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         }
       } else {
         setMessages([...messages, newMessageRecieved]);
+        
       }
     });
   });
